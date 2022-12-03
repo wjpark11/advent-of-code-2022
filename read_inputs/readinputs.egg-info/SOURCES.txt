@@ -1,0 +1,7 @@
+README.txt
+readinputs.py
+setup.py
+readinputs.egg-info/PKG-INFO
+readinputs.egg-info/SOURCES.txt
+readinputs.egg-info/dependency_links.txt
+readinputs.egg-info/top_level.txt
