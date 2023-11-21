@@ -28,6 +28,19 @@ def set_tail_position(head_x, head_y, tail_x, tail_y):
             return tail_x + 1, tail_y
         else:
             return tail_x - 1, tail_y
+        
+    if abs(head_x - tail_x) == 2 and abs(head_y - tail_y) == 2:
+        if head_x > tail_x:
+            tail_x = tail_x + 1
+        else:
+            tail_x = tail_x - 1
+
+        if head_y > tail_y:
+            tail_y = tail_y + 1
+        else:
+            tail_y = tail_y - 1
+        return tail_x, tail_y
+
     if abs(head_x - tail_x) == 2:
         tail_y = head_y
         if head_x > tail_x:
@@ -42,14 +55,13 @@ def set_tail_position(head_x, head_y, tail_x, tail_y):
             return tail_x , tail_y - 1
     raise ValueError("Invalid head and tail position")
 
-knots = [(0,0) for _ in range(9)]
+knots = [(0,0) for _ in range(10)]
 tail9_visited_point = {(0, 0),}
 
 for walk in HEAD_WALKS:
     knots[0] = get_head_position(knots[0][0], knots[0][1], walk)
-    for i in range(1, 9):
+    for i in range(1, 10):
         knots[i] = set_tail_position(knots[i-1][0], knots[i-1][1], knots[i][0], knots[i][1])
-    print(knots)
-    tail9_visited_point.add(knots[8])
+    tail9_visited_point.add(knots[9])
 
 print(len(tail9_visited_point))
