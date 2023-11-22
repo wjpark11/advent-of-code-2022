@@ -55,6 +55,7 @@ def set_tail_position(head_x, head_y, tail_x, tail_y):
             return tail_x , tail_y - 1
     raise ValueError("Invalid head and tail position")
 
+
 knots = [(0,0) for _ in range(10)]
 tail9_visited_point = {(0, 0),}
 
