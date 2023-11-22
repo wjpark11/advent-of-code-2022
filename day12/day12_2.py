@@ -71,6 +71,7 @@ def get_distance(start_point, end_point, matrix):
 
     return distance
 
+
 min_dist = inf
 for i in range(HEIGHT):
     for j in range(WIDTH):
